@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fraunces Variable", "Noto Serif Variable", Georgia, serif;
+  --font-sans: "Figtree Variable", "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --color-ink: #0c2433;
+  --color-whitewash: #e8edee;
+  --color-brine: #2e6c73;
+  --color-ruby: #a32a31;
+  --color-amber: #c98a3b;
+}
+
+:root {
+  /* 0 = fresh, 1 = fully aged; set from scroll position in App.vue */
+  --age: 0;
+  --pct: calc(var(--age) * 100%);
+  --bg: color-mix(in oklab, #0c2433, #2b1315 var(--pct));
+  --bg-raised: color-mix(in oklab, #12344a, #3b1b1d var(--pct));
+  --accent: color-mix(in oklab, #8fc0c4, #d9963f var(--pct));
+  --flesh: color-mix(in oklab, #b9d2d6, #a32a31 var(--pct));
+  --flesh-edge: color-mix(in oklab, #5f8f97, #5a1a1a var(--pct));
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--bg);
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--color-whitewash);
+  -webkit-font-smoothing: antialiased;
+  cursor: default;
+}
+
+a,
+button:not(:disabled),
+label,
+input[type="checkbox"],
+summary {
+  cursor: pointer;
+}
+
+input:not([type="checkbox"]),
+textarea {
+  cursor: text;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--color-ink);
+}
+
+.display {
+  font-family: var(--font-display);
+  font-variation-settings: "SOFT" 100, "WONK" 1, "opsz" 144;
+  letter-spacing: -0.02em;
+}
+
+/* Hero load sequence: one orchestrated moment */
+@keyframes reveal-fish {
+  from { clip-path: inset(0 100% 0 0); }
+  to { clip-path: inset(0 0 0 0); }
+}
+@keyframes rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+.hero-fish { animation: reveal-fish 1.6s cubic-bezier(.6, .05, .2, 1) both; }
+.hero-line { animation: rise .9s cubic-bezier(.2, .7, .2, 1) both; }
+.hero-line:nth-child(1) { animation-delay: .15s; }
+.hero-line:nth-child(2) { animation-delay: .35s; }
+.hero-line:nth-child(3) { animation-delay: .55s; }
+.hero-line:nth-child(4) { animation-delay: .75s; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .hero-fish, .hero-line { animation: none; }
+}
