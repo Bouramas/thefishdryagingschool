@@ -10,7 +10,15 @@ const en = {
   description:
     'A 7-day professional program on fish dry aging by Marathia restaurant and the University of West Attica, on Tinos island, Greece. 4 participants per cohort. Opening soon.',
   nav: { getNotified: 'Get notified', privacy: 'Privacy', language: 'Language', switchTo: 'Switch to Greek' },
-  hero: { eyebrow: 'Agios Fokas, Tinos, Greece. Opening soon.' },
+  hero: { eyebrow: 'Agios Fokas, Tinos, Greece. Opening soon.', chefAlt: 'Chef and lead instructor Marinos holding a tuna' },
+  clothesline: {
+    title: 'From the drying room',
+    alts: [
+      'Whole fish hanging to age inside a glass-door cabinet',
+      'Dry-aged tuna cut open, showing its crust and deep red flesh',
+      'Spice-crusted fish hanging in the aging chamber',
+    ],
+  },
   intro:
     '[[Marathia restaurant]], in collaboration with the {{University of West Attica}}, has created a specialized educational program on fish dry aging, based in the region of Agios Fokas, on Tinos island, Greece. The program combines scientific knowledge with extensive practical experience, bridging food science and contemporary gastronomy.',
   program: {
@@ -109,7 +117,15 @@ const el = {
   description:
     'Επαγγελματικό πρόγραμμα 7 ημερών για την ωρίμανση των ψαριών από το εστιατόριο Μαραθιά και το Πανεπιστήμιο Δυτικής Αττικής, στην Τήνο. 4 εκπαιδευόμενοι ανά τμήμα. Σύντομα κοντά σας.',
   nav: { getNotified: 'Ειδοποιήστε με', privacy: 'Πολιτική απορρήτου', language: 'Γλώσσα', switchTo: 'Αλλαγή σε Αγγλικά' },
-  hero: { eyebrow: 'Άγιος Φωκάς, Τήνος, Ελλάδα. Σύντομα κοντά σας.' },
+  hero: { eyebrow: 'Άγιος Φωκάς, Τήνος, Ελλάδα. Σύντομα κοντά σας.', chefAlt: 'Ο σεφ και κύριος εκπαιδευτής Μαρίνος κρατά έναν τόνο' },
+  clothesline: {
+    title: 'Από τον θάλαμο ωρίμανσης',
+    alts: [
+      'Ολόκληρα ψάρια που ωριμάζουν κρεμασμένα σε ψυγείο με γυάλινη πόρτα',
+      'Ώριμος τόνος κομμένος στη μέση, με την κρούστα και τη βαθυκόκκινη σάρκα του',
+      'Ψάρια με κρούστα μπαχαρικών κρεμασμένα στον θάλαμο ωρίμανσης',
+    ],
+  },
   intro:
     '[[Η Μαραθιά]], σε συνεργασία με το {{Πανεπιστήμιο Δυτικής Αττικής}}, δημιούργησαν ένα εξειδικευμένο εκπαιδευτικό πρόγραμμα για την ωρίμανση των ψαριών, στον Άγιο Φωκά της Τήνου. Ένα πρόγραμμα που συνδυάζει την επιστημονική γνώση με την πολυετή πρακτική εμπειρία, συνδέοντας την επιστήμη των τροφίμων με τη σύγχρονη γαστρονομία.',
   program: {

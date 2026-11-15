@@ -2,6 +2,7 @@
 import FishIllustration from '../components/FishIllustration.vue'
 import ModuleList from '../components/ModuleList.vue'
 import NotifyForm from '../components/NotifyForm.vue'
+import Clothesline from '../components/Clothesline.vue'
 import LinkedText from '../components/LinkedText.vue'
 import { t } from '../i18n'
 
@@ -14,7 +15,7 @@ const logos = [
 
 <template>
   <!-- Hero -->
-  <section class="relative overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-28">
+  <section class="relative overflow-hidden pt-32 pb-10 lg:pt-40 lg:pb-14">
     <div class="mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-12 lg:px-10">
       <div class="lg:col-span-6">
         <p class="hero-line mb-5 text-base font-medium" :style="{ color: 'var(--accent)' }">
@@ -28,29 +29,40 @@ const logos = [
           <NotifyForm compact />
         </div>
       </div>
-      <div class="hero-fish lg:col-span-6 lg:-mr-24">
-        <FishIllustration />
-      </div>
+      <figure class="hero-fish lg:col-span-6">
+        <div class="photo-print mx-auto w-full max-w-sm sm:max-w-md lg:ml-auto lg:mr-6 lg:max-w-lg">
+          <img
+            src="/images/chef_tuna_1200.jpeg"
+            :alt="t.hero.chefAlt"
+            width="1200"
+            height="1600"
+            fetchpriority="high"
+            class="block aspect-[3/4] h-auto w-full object-cover object-top"
+          />
+        </div>
+      </figure>
     </div>
   </section>
 
   <!-- Program -->
-  <section class="py-20 lg:py-28">
-    <div class="mx-auto max-w-7xl px-6 lg:px-10">
-      <h2 class="display max-w-3xl text-4xl font-semibold leading-tight sm:text-5xl">
+  <section class="py-6 lg:py-8">
+    <div class="mx-auto max-w-7xl px-6 text-center lg:px-10">
+      <h2 class="display mx-auto max-w-3xl text-4xl font-semibold leading-tight sm:text-5xl">
         {{ t.program.headline(t.program.days, t.program.hours, t.program.participants) }}
       </h2>
-      <p class="mt-6 max-w-prose text-lg leading-relaxed text-white/75"><LinkedText :text="t.program.summary" /></p>
+      <p class="mx-auto mt-6 max-w-prose text-lg leading-relaxed text-white/75"><LinkedText :text="t.program.summary" /></p>
     </div>
   </section>
 
   <!-- Modules -->
-  <section class="py-12 lg:py-20" aria-labelledby="modules-title">
+  <section class="pt-6 pb-12 lg:pt-8 lg:pb-20" aria-labelledby="modules-title">
     <div class="mx-auto max-w-7xl px-6 lg:px-10">
       <h2 id="modules-title" class="display mb-10 text-4xl font-semibold sm:text-5xl">{{ t.modulesTitle }}</h2>
       <ModuleList :modules="t.modules" />
     </div>
   </section>
+
+  <Clothesline />
 
   <!-- Audience + certification -->
   <section class="py-20 lg:py-28">
@@ -94,6 +106,7 @@ const logos = [
     <div class="mx-auto max-w-4xl px-6 lg:px-10">
       <h2 class="display text-4xl font-semibold leading-tight sm:text-5xl">{{ t.science.title }}</h2>
       <p v-for="p in t.science.body" :key="p" class="mt-6 max-w-prose text-xl leading-relaxed text-white/80">{{ p }}</p>
+      <FishIllustration class="mx-auto mt-16 w-48 sm:w-64" aria-hidden="true" />
     </div>
   </section>
 
