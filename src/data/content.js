@@ -4,12 +4,12 @@ const en = {
   siteName: 'The Fish Dry Aging School',
   titles: {
     home: 'The Fish Dry Aging School | Tinos, Greece',
-    privacy: 'Privacy | The Fish Dry Aging School',
+    privacy: 'Privacy Policy | The Fish Dry Aging School',
     notFound: 'Page not found | The Fish Dry Aging School',
   },
   description:
     'A 7-day professional program on fish dry aging by Marathia restaurant and the University of West Attica, on Tinos island, Greece. 4 participants per cohort. Opening soon.',
-  nav: { getNotified: 'Get notified', privacy: 'Privacy', language: 'Language', switchTo: 'Switch to Greek' },
+  nav: { getNotified: 'Get notified', privacy: 'Privacy Policy', language: 'Language', switchTo: 'Switch to Greek' },
   hero: { eyebrow: 'Agios Fokas, Tinos, Greece. Opening soon.', chefAlt: 'Chef and lead instructor Marinos holding a tuna' },
   clothesline: {
     title: 'From the drying room',

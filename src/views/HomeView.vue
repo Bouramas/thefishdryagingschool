@@ -7,9 +7,9 @@ import LinkedText from '../components/LinkedText.vue'
 import { t } from '../i18n'
 
 const logos = [
-  { key: 'marathia', src: '/logos/logo_marathia.png', pad: 'p-8', url: 'https://marathiatinos.gr' },
-  { key: 'uwa', src: '/logos/logo_uwa.png', pad: 'p-3', url: 'https://www.uniwa.gr/' },
-  { key: 'kedivim', src: '/logos/logo_kedivim_gr.jpg', pad: 'p-1', url: 'https://kedivim.uniwa.gr/' },
+  { key: 'marathia', src: '/logos/logo_marathia.png', pad: 'p-8', round: false, url: 'https://marathiatinos.gr' },
+  { key: 'uwa', src: '/logos/logo_uwa.png', pad: 'p-3', round: true, url: 'https://www.uniwa.gr/' },
+  { key: 'kedivim', src: '/logos/logo_kedivim_gr.jpg', pad: 'p-1', round: true, url: 'https://kedivim.uniwa.gr/' },
 ]
 </script>
 
@@ -86,12 +86,12 @@ const logos = [
   <section class="py-12 lg:py-20" aria-labelledby="auspices-title">
     <div class="mx-auto max-w-7xl px-6 lg:px-10">
       <h2 id="auspices-title" class="display mb-10 text-4xl font-semibold sm:text-5xl">{{ t.auspices.title }}</h2>
-      <ul class="grid gap-6 sm:grid-cols-3">
+      <ul class="grid items-center justify-items-center gap-6 sm:grid-cols-3">
         <li
           v-for="l in logos"
           :key="l.key"
-          class="flex h-40 items-center justify-center rounded-3xl bg-white"
-          :class="l.pad"
+          class="flex h-40 items-center justify-center"
+          :class="l.round ? ['w-40 overflow-hidden rounded-full bg-white', l.pad] : 'w-full ' + l.pad"
         >
           <a :href="l.url" target="_blank" rel="noopener noreferrer" class="flex h-full w-full items-center justify-center">
             <img :src="l.src" :alt="t.auspices.logos[l.key]" class="max-h-full max-w-full object-contain" loading="lazy" />

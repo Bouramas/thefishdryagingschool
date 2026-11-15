@@ -12,7 +12,7 @@ import LanguageSwitch from './LanguageSwitch.vue'
       <div class="flex items-center gap-3">
         <RouterLink
           :to="{ path: '/', hash: '#notify' }"
-          class="rounded-full border border-white/30 px-5 py-2 text-sm font-medium transition-colors hover:bg-white/10"
+          class="hidden rounded-full border border-white/30 px-5 py-2 text-sm font-medium transition-colors sm:block hover:bg-white/10"
         >
           {{ t.nav.getNotified }}
         </RouterLink>
