@@ -13,9 +13,9 @@ const social = [
 
 <template>
   <footer class="border-t border-white/10">
-    <div class="mx-auto flex max-w-7xl flex-col items-start gap-4 px-6 pt-10 sm:flex-row sm:items-center sm:gap-6 lg:px-10">
+    <div class="mx-auto flex max-w-7xl flex-col items-center gap-4 px-6 pt-10 sm:flex-row sm:items-center sm:gap-6 lg:px-10">
       <p class="text-xs uppercase tracking-[0.2em] text-white/60">{{ t.footer.social.caption }}</p>
-      <ul class="flex items-center gap-3">
+      <ul class="flex items-center justify-center gap-3">
         <li v-for="s in social" :key="s.key">
           <a
             :href="s.href"
@@ -40,7 +40,7 @@ const social = [
         </li>
       </ul>
     </div>
-    <div class="mx-auto flex max-w-7xl flex-col gap-3 px-6 py-8 text-sm text-white/60 lg:flex-row lg:items-center lg:justify-between lg:px-10">
+    <div class="mx-auto flex max-w-7xl flex-col items-center gap-3 px-6 py-8 text-center text-sm text-white/60 lg:flex-row lg:text-left lg:items-center lg:justify-between lg:px-10">
       <p><LinkedText :text="t.footer.text" /></p>
       <nav class="flex items-center gap-6">
         <RouterLink to="/privacy" class="hover:text-white">{{ t.nav.privacy }}</RouterLink>
