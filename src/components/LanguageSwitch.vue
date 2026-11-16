@@ -1,20 +1,28 @@
 <script setup>
-import { locale, setLocale, t } from '../i18n'
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
+import { locale, t, pathFor, savePreference } from '../i18n'
 
-// Shows the flag of the language you can switch to.
-function toggle() {
-  setLocale(locale.value === 'en' ? 'el' : 'en')
-}
+const route = useRoute()
+
+// Shows the flag of the language you can switch to and links to the same page in that language.
+const target = computed(() => (locale.value === 'en' ? 'el' : 'en'))
+const to = computed(() => ({
+  path: pathFor(route.path, target.value),
+  query: route.query,
+  hash: route.hash,
+}))
 </script>
 
 <template>
-  <button
-    type="button"
+  <RouterLink
+    :to="to"
     class="inline-flex shrink-0 cursor-pointer transition-opacity hover:opacity-80"
     :aria-label="t.nav.switchTo"
     :title="t.nav.switchTo"
-    :lang="locale === 'en' ? 'el' : 'en'"
-    @click="toggle"
+    :lang="target"
+    :hreflang="target"
+    @click="savePreference(target)"
   >
     <svg v-if="locale === 'en'" viewBox="0 0 27 18" class="h-5 w-[30px] rounded-md" aria-hidden="true">
       <rect width="27" height="18" fill="#0d5eaf" />
@@ -31,5 +39,5 @@ function toggle() {
       <path d="M30 0V30M0 15H60" stroke="#fff" stroke-width="10" />
       <path d="M30 0V30M0 15H60" stroke="#c8102e" stroke-width="6" />
     </svg>
-  </button>
+  </RouterLink>
 </template>

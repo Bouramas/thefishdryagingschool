@@ -213,4 +213,4 @@ const el = {
 }
 
 export const locales = { en, el }
-export const defaultLocale = 'en'
+export const defaultLocale = 'el'

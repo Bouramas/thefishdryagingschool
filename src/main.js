@@ -1,10 +1,26 @@
-import { createApp } from 'vue'
+import { ViteSSG } from 'vite-ssg'
 import '@fontsource-variable/fraunces'
 import '@fontsource-variable/figtree'
 import '@fontsource-variable/noto-serif'
 import '@fontsource-variable/inter'
 import './style.css'
 import App from './App.vue'
-import router from './router'
+import { routes } from './router/routes'
+import { setLocale } from './i18n'
 
-createApp(App).use(router).mount('#app')
+export const createApp = ViteSSG(
+  App,
+  {
+    routes,
+    scrollBehavior(to) {
+      if (to.hash) return { el: to.hash, behavior: 'smooth' }
+      return { top: 0 }
+    },
+  },
+  ({ router }) => {
+    // The URL is the source of truth for the locale.
+    router.beforeEach((to) => {
+      setLocale(to.meta.locale)
+    })
+  },
+)

@@ -4,25 +4,25 @@ Pre-launch site for The Fish Dry Aging School (Marathia restaurant and the Unive
 
 ## Stack
 - Vue 3 (`<script setup>`), Vite, vue-router 5, Tailwind CSS v4 (`@tailwindcss/vite`)
-- `vite-plugin-sitemap` for `sitemap.xml`; `public/robots.txt` is static
+- `vite-ssg` prerenders routes; `@unhead/vue` sets head tags (`src/App.vue`); `sitemap.xml` is written in `vite.config.js`; `public/robots.txt` is static
 - Fonts self-hosted via `@fontsource-variable/fraunces` (display) and `@fontsource-variable/figtree` (body)
 - Plain JavaScript, no TypeScript, no test runner
 
 ## Commands
 - `npm install`
 - `npm run dev` starts the dev server (port 5173)
-- `npm run build` builds to `dist/` and writes `dist/sitemap.xml`
+- `npm run build` prerenders to `dist/` and writes `dist/sitemap.xml`
 - `npm run preview` serves the build
 
 ## Structure
 - `index.html`: title, meta description, Open Graph, canonical, JSON-LD (`Course`)
-- `vite.config.js`: plugins; sitemap hostname from `VITE_SITE_URL`
+- `vite.config.js`: plugins, prerender and sitemap (hostname from `VITE_SITE_URL`)
 - `src/main.js`: app bootstrap, font imports
 - `src/router/index.js`: routes `/`, `/privacy`, catch-all 404 (`noindex`); sets `document.title` and the robots meta per route
 - `src/style.css`: Tailwind import, `@theme` tokens, `--age` colour variables, hero animations
 - `src/App.vue`: layout shell and the scroll listener that sets `--age`
 - `src/data/content.js`: all copy and UI strings, in `en` and `el`. Edit copy here, not in views. Keep both locales in sync.
-- `src/i18n.js`: `locale` ref (saved in localStorage, defaults to browser language), `t` computed with the active copy. `LanguageSwitch.vue` (header and footer) toggles it. The switch is state-based, not URL-based.
+- `src/i18n.js`: `locale` ref set by the router guard from the URL (Greek at root, English under `/en`), `t` computed with the active copy, `pathFor`/`localePath` helpers. `LanguageSwitch.vue` (header and footer) links to the same page in the other language and saves `fdas-locale` in localStorage. Routes live in `src/router/routes.js`. Prerendering runs with concurrency 1 because locale is module-level state.
 - `src/views/`: `HomeView`, `PrivacyView`, `NotFoundView`
 - `src/components/`: `FishIllustration`, `ModuleList`, `NotifyForm`, `SiteHeader`, `SiteFooter`
 - `public/`: `robots.txt`, `favicon.svg`
@@ -42,7 +42,7 @@ Pre-launch site for The Fish Dry Aging School (Marathia restaurant and the Unive
 
 ## Environment variables
 See `.env.example`.
-- `VITE_SITE_URL`: public site URL, used for the sitemap
+- `VITE_SITE_URL`: public site URL, used for the sitemap, canonical and hreflang
 - `VITE_SUBSCRIBE_URL`: endpoint that receives signups
 
 ## Open items

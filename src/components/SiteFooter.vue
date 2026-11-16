@@ -1,5 +1,5 @@
 <script setup>
-import { t } from '../i18n'
+import { t, localePath } from '../i18n'
 import LanguageSwitch from './LanguageSwitch.vue'
 import LinkedText from './LinkedText.vue'
 
@@ -43,7 +43,7 @@ const social = [
     <div class="mx-auto flex max-w-7xl flex-col items-center gap-3 px-6 py-8 text-center text-sm text-white/60 lg:flex-row lg:text-left lg:items-center lg:justify-between lg:px-10">
       <p><LinkedText :text="t.footer.text" /></p>
       <nav class="flex items-center gap-6">
-        <RouterLink to="/privacy" class="hover:text-white">{{ t.nav.privacy }}</RouterLink>
+        <RouterLink :to="localePath('/privacy')" class="hover:text-white">{{ t.nav.privacy }}</RouterLink>
         <LanguageSwitch />
       </nav>
     </div>
