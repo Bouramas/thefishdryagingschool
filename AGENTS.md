@@ -24,8 +24,8 @@ Pre-launch site for The Fish Dry Aging School (Marathia restaurant and the Unive
 - `src/data/content.js`: all copy and UI strings, in `en` and `el`. Edit copy here, not in views. Keep both locales in sync.
 - `src/i18n.js`: `locale` ref set by the router guard from the URL (Greek at root, English under `/en`), `t` computed with the active copy, `pathFor`/`localePath` helpers. `LanguageSwitch.vue` (header and footer) links to the same page in the other language and saves `fdas-locale` in localStorage. Routes live in `src/router/routes.js`. Prerendering runs with concurrency 1 because locale is module-level state.
 - `src/views/`: `HomeView`, `PrivacyView`, `NotFoundView`
-- `src/components/`: `FishIllustration`, `ModuleList`, `NotifyForm`, `SiteHeader`, `SiteFooter`
-- `public/`: `robots.txt`, `favicon.svg`
+- `src/components/`: `ModuleList`, `NotifyForm`, `SiteHeader`, `SiteFooter`
+- `public/`: `robots.txt`, `favicon.svg`, `images/` (incl. `book_cover_gr/en.webp` for the book section on the home page, copy in `content.js` under `book`)
 - `content.md`: original source copy
 
 ## Design decisions
@@ -36,14 +36,14 @@ Pre-launch site for The Fish Dry Aging School (Marathia restaurant and the Unive
 - Modules are numbered because the source numbers them. Do not add numbering to non-sequential content.
 
 ## Notify form
-- `NotifyForm.vue` validates the email, requires consent, includes a honeypot field, and POSTs JSON `{ "email": "..." }` to `VITE_SUBSCRIBE_URL`.
-- No backend exists. When `VITE_SUBSCRIBE_URL` is unset the form shows a "not connected" error, so no signup is lost silently.
+- `NotifyForm.vue` validates the email, requires consent, includes a honeypot field, and POSTs form-encoded `email` and `userGroup` (locale) to the Loops.so form endpoint in `VITE_LOOPS_FORM_URL`.
+- No backend exists. When `VITE_LOOPS_FORM_URL` is unset the form shows a "not connected" error, so no signup is lost silently.
 - Collected data is limited to the email address. If the data collected changes, update `PrivacyView.vue`.
 
 ## Environment variables
 See `.env.example`.
 - `VITE_SITE_URL`: public site URL, used for the sitemap, canonical and hreflang
-- `VITE_SUBSCRIBE_URL`: endpoint that receives signups
+- `VITE_LOOPS_FORM_URL`: Loops.so form endpoint
 
 ## Open items
 - Replace the placeholder domain `https://thefishdryagingschool.com` in `.env`, `public/robots.txt` and the canonical and Open Graph URLs in `index.html`.

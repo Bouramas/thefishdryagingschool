@@ -33,9 +33,9 @@ See `.env.example`.
 | Variable | Description |
 | --- | --- |
 | `VITE_SITE_URL` | Public site URL, used for the sitemap, canonical and hreflang links |
-| `VITE_SUBSCRIBE_URL` | Endpoint that receives signups (JSON `{ "email": "..." }` via POST) |
+| `VITE_LOOPS_FORM_URL` | Loops.so form endpoint: `https://app.loops.so/api/newsletter-form/<FORM_ID>` (form-encoded `email`, `userGroup`) |
 
-If `VITE_SUBSCRIBE_URL` is unset, the notify form shows a "not connected" error.
+If `VITE_LOOPS_FORM_URL` is unset, the notify form shows a "not connected" error.
 
 ## Project structure
 

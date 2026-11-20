@@ -55,6 +55,18 @@ const en = {
   certification:
     'Upon successful completion, an officially recognized training certificate will be provided by the {{University of West Attica}}, in accordance with the program’s terms. It corresponds to 3 ECVET credits.',
   certificationCredits: 'credits, issued by the {{University of West Attica}}',
+  book: {
+    label: 'The book',
+    kicker: 'Nefeli Publications',
+    title: 'Fish and Aging. A Manual for the Correct Aging and Handling of Fish',
+    body: [
+      'Through its 176 elegant pages, rich in content and substance, the book aims to break the age-old stereotype that fish must be eaten fresh. The excellent result reflects the author’s love and dedication to tradition, innovation, localism, and, of course, good food.',
+      'The book is the first and only one in the literature to deal with this subject and has been produced in collaboration with food technologists. It includes a wealth of photographs, sketches, and recipes.',
+    ],
+    cover: '/images/book_cover_en.webp',
+    buy: 'Buy the book',
+    buyUrl: 'https://s22.gr/products/marathia1-en',
+  },
   auspices: {
     title: 'Under the auspices',
     logos: { uwa: 'University of West Attica', kedivim: 'KEDIVIM, University of West Attica', marathia: 'Marathia restaurant' },
@@ -82,7 +94,7 @@ const en = {
     successBody: 'We will email you when the school opens for registration.',
     errInvalid: 'Enter a valid email address, for example name@example.com.',
     errConsent: 'Tick the box to agree that we may email you about the school.',
-    errNotConnected: 'Sign-up is not connected yet. Set VITE_SUBSCRIBE_URL to enable it.',
+    errNotConnected: 'Sign-up is not connected yet. Set VITE_LOOPS_FORM_URL to enable it.',
     errFailed: 'We could not save your email. Check your connection and try again.',
   },
   footer: {
@@ -93,7 +105,8 @@ const en = {
     title: 'Privacy notice',
     paragraphs: [
       'This site collects one piece of personal data: the email address you enter in the notification form.',
-      'We use it only to tell you when The Fish Dry Aging School opens for registration. We do not use it for other purposes and do not sell or share it.',
+      'We use it only to tell you when The Fish Dry Aging School opens for registration. We do not use it for other purposes and do not sell it.',
+      'Your email address and the language of the page you signed up from are stored and sent by our email service provider, Loops (Loops.so), which acts as our data processor under a data processing agreement. We do not share your data with anyone else.',
       'The legal basis is your consent, which you give by ticking the box in the form. You can withdraw it at any time by replying to any email we send, and we will delete your address. You also have the rights of access, rectification and erasure under the GDPR.',
       'We keep your address until the first cohort has been announced, or until you ask us to delete it.',
     ],
@@ -161,6 +174,18 @@ const el = {
   certification:
     'Με την επιτυχή ολοκλήρωση, χορηγείται πιστοποιητικό επιμόρφωσης από το ΚΕΔΙΒΙΜ του {{Πανεπιστημίου Δυτικής Αττικής}}, σύμφωνα με τους όρους του προγράμματος. Αντιστοιχεί σε 3 μονάδες ECVET.',
   certificationCredits: 'μονάδες, από το {{Πανεπιστήμιο Δυτικής Αττικής}}',
+  book: {
+    label: 'Το βιβλίο',
+    kicker: 'Εκδόσεις Νεφέλη · Ιούνιος 2025',
+    title: 'Ψάρια και Ωρίμανση. Εγχειρίδιο ορθής ωρίμανσης και χειρισμού ψαριών',
+    body: [
+      'Μέσα από τις 176 καλαίσθητες και πλούσιες σε περιεχόμενο και ουσία σελίδες του, το βιβλίο φιλοδοξεί να καταρρίψει το προαιώνιο στερεότυπο που θέλει το ψάρι να πρέπει να τρώγεται φρέσκο. Το εξαιρετικό αποτέλεσμα, αντανακλά την αγάπη και την αφοσίωση του συγγραφέα στην παράδοση, στην καινοτομία, την εντοπιότητα και φυσικά, στο καλό φαγητό.',
+      'Το βιβλίο είναι το πρώτο και το μόνο στη βιβλιογραφία που ασχολείται με το θέμα και έχει γίνει σε συνεργασία με τεχνολόγους τροφίμων. Περιλαμβάνει πλούσιο φωτογραφικό υλικό, σκίτσα και συνταγές.',
+    ],
+    cover: '/images/book_cover_gr.webp',
+    buy: 'Αγορά του βιβλίου',
+    buyUrl: 'https://s22.gr/products/marathia1-en',
+  },
   auspices: {
     title: 'Υπό την αιγίδα',
     logos: { uwa: 'Πανεπιστήμιο Δυτικής Αττικής', kedivim: 'ΚΕΔΙΒΙΜ, Πανεπιστήμιο Δυτικής Αττικής', marathia: 'Εστιατόριο Μαραθιά' },
@@ -188,7 +213,7 @@ const el = {
     successBody: 'Θα σας στείλουμε email όταν ανοίξουν οι εγγραφές της σχολής.',
     errInvalid: 'Εισαγάγετε έγκυρη διεύθυνση email, για παράδειγμα onoma@example.com.',
     errConsent: 'Επιλέξτε το πλαίσιο για να συμφωνήσετε να σας στείλουμε email σχετικά με τη σχολή.',
-    errNotConnected: 'Η εγγραφή δεν έχει συνδεθεί ακόμη. Ορίστε το VITE_SUBSCRIBE_URL για να ενεργοποιηθεί.',
+    errNotConnected: 'Η εγγραφή δεν έχει συνδεθεί ακόμη. Ορίστε το VITE_LOOPS_FORM_URL για να ενεργοποιηθεί.',
     errFailed: 'Δεν ήταν δυνατή η αποθήκευση του email σας. Ελέγξτε τη σύνδεσή σας και δοκιμάστε ξανά.',
   },
   footer: {
@@ -199,7 +224,8 @@ const el = {
     title: 'Πολιτική απορρήτου',
     paragraphs: [
       'Αυτός ο ιστότοπος συλλέγει ένα μόνο προσωπικό δεδομένο: τη διεύθυνση email που εισάγετε στη φόρμα ενημέρωσης.',
-      'Τη χρησιμοποιούμε μόνο για να σας ενημερώσουμε πότε ανοίγουν οι εγγραφές του The Fish Dry Aging School. Δεν τη χρησιμοποιούμε για άλλους σκοπούς και δεν την πουλάμε ούτε την κοινοποιούμε.',
+      'Τη χρησιμοποιούμε μόνο για να σας ενημερώσουμε πότε ανοίγουν οι εγγραφές του The Fish Dry Aging School. Δεν τη χρησιμοποιούμε για άλλους σκοπούς και δεν την πουλάμε.',
+      'Η διεύθυνση email σας και η γλώσσα της σελίδας από την οποία εγγραφήκατε αποθηκεύονται και αποστέλλονται μέσω του παρόχου υπηρεσιών email μας, Loops (Loops.so), ο οποίος ενεργεί ως εκτελών την επεξεργασία για λογαριασμό μας βάσει σύμβασης επεξεργασίας δεδομένων. Δεν κοινοποιούμε τα δεδομένα σας σε κανέναν άλλον.',
       'Η νομική βάση είναι η συγκατάθεσή σας, την οποία δίνετε επιλέγοντας το πλαίσιο στη φόρμα. Μπορείτε να την ανακαλέσετε οποιαδήποτε στιγμή απαντώντας σε οποιοδήποτε email σας στείλουμε και θα διαγράψουμε τη διεύθυνσή σας. Έχετε επίσης τα δικαιώματα πρόσβασης, διόρθωσης και διαγραφής σύμφωνα με τον GDPR.',
       'Διατηρούμε τη διεύθυνσή σας μέχρι να ανακοινωθεί το πρώτο τμήμα ή μέχρι να ζητήσετε τη διαγραφή της.',
     ],

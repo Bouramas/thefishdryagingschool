@@ -1,5 +1,4 @@
 <script setup>
-import FishIllustration from '../components/FishIllustration.vue'
 import ModuleList from '../components/ModuleList.vue'
 import NotifyForm from '../components/NotifyForm.vue'
 import Clothesline from '../components/Clothesline.vue'
@@ -87,7 +86,38 @@ const logos = [
     <div class="mx-auto max-w-4xl px-6 lg:px-10">
       <h2 class="display text-4xl font-semibold leading-tight sm:text-5xl">{{ t.science.title }}</h2>
       <p v-for="p in t.science.body" :key="p" class="mt-6 max-w-prose text-xl leading-relaxed text-white/80">{{ p }}</p>
-      <FishIllustration class="mx-auto mt-16 w-48 sm:w-64 lg:w-96 xl:w-[32rem]" aria-hidden="true" />
+    </div>
+  </section>
+
+  <!-- Book -->
+  <section class="py-6 lg:py-16" aria-labelledby="book-title">
+    <div class="mx-auto max-w-7xl px-6 lg:px-10">
+      <div class="grid items-center gap-8 sm:rounded-3xl sm:bg-(--bg-raised) sm:p-14 lg:grid-cols-2 lg:gap-16">
+        <div class="flex justify-center">
+          <img
+            :src="t.book.cover"
+            :alt="t.book.title"
+            width="601"
+            height="801"
+            loading="lazy"
+            class="h-auto w-full max-w-xs rounded-lg shadow-2xl"
+          />
+        </div>
+        <div>
+          <p class="mb-3 text-base font-medium" :style="{ color: 'var(--accent)' }">{{ t.book.label }} · {{ t.book.kicker }}</p>
+          <h2 id="book-title" class="display mb-6 text-3xl font-semibold leading-snug sm:text-4xl">{{ t.book.title }}</h2>
+          <p v-for="p in t.book.body" :key="p" class="mb-4 max-w-prose text-lg leading-relaxed text-white/80">{{ p }}</p>
+          <a
+            :href="t.book.buyUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mt-4 inline-block rounded-full px-6 py-3 font-semibold text-ink transition-opacity hover:opacity-90"
+            :style="{ background: 'var(--accent)' }"
+          >
+            {{ t.book.buy }}
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 

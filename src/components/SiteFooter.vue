@@ -6,8 +6,8 @@ import LinkedText from './LinkedText.vue'
 // Placeholder URLs: replace with the real profile links.
 const social = [
   { key: 'facebook', href: 'https://www.facebook.com/marathiatinos' },
-  { key: 'instagram', href: 'https://www.instagram.com/marathia' },
-  { key: 'substack', href: 'https://PLACEHOLDER.substack.com' },
+  { key: 'instagram', href: 'https://www.instagram.com/thefishdryagingschool/' },
+  { key: 'substack', href: 'https://marathiatinos.substack.com/' },
 ]
 </script>
 

@@ -1,6 +1,6 @@
 <script setup>
 import { ref, useId } from 'vue'
-import { t } from '../i18n'
+import { t, locale } from '../i18n'
 
 defineProps({ compact: Boolean })
 
@@ -11,7 +11,7 @@ const consent = ref(false)
 const status = ref('idle') // idle | loading | success | error
 const message = ref('')
 
-const endpoint = import.meta.env.VITE_SUBSCRIBE_URL
+const endpoint = import.meta.env.VITE_LOOPS_FORM_URL
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/
 
 async function submit() {
@@ -40,10 +40,11 @@ async function submit() {
   try {
     const res = await fetch(endpoint, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-      body: JSON.stringify({ email: email.value.trim() }),
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({ email: email.value.trim(), userGroup: locale.value }).toString(),
     })
-    if (!res.ok) throw new Error(`HTTP ${res.status}`)
+    const data = await res.json().catch(() => ({}))
+    if (!res.ok || data.success === false) throw new Error(data.message || `HTTP ${res.status}`)
     status.value = 'success'
   } catch {
     status.value = 'error'

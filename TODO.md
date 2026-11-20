@@ -5,5 +5,8 @@ Add link for someone to buy the book.
 https://s22.gr/products/marathia1-en
 
 
+Remove fish and put logo
+Put the logo and change color
 FIX SEO
-FIX SUBSCRIBE FUNCTIONALITY
+
+// Add the Loops verification record to your DNS to start sending.
