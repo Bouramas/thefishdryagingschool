@@ -9,7 +9,13 @@ const en = {
   },
   description:
     'A 7-day professional program on fish dry aging by Marathia restaurant and the University of West Attica, on Tinos island, Greece. 4 participants per cohort. Opening soon.',
-  nav: { getNotified: 'Get notified', privacy: 'Privacy Policy', language: 'Language', switchTo: 'Switch to Greek' },
+  descriptions: {
+    home:
+      'A 7-day professional program on fish dry aging by Marathia restaurant and the University of West Attica, on Tinos island, Greece. 4 participants per cohort. Opening soon.',
+    privacy: 'How The Fish Dry Aging School collects, uses and protects your personal data when you ask to be notified about the program.',
+    notFound: 'The page you are looking for does not exist.',
+  },
+  nav: { label: 'Main navigation', skip: 'Skip to content', getNotified: 'Get notified', privacy: 'Privacy Policy', language: 'Language', switchTo: 'Switch to Greek' },
   hero: { eyebrow: 'Agios Fokas, Tinos, Greece. Opening soon.', chefAlt: 'Chef and lead instructor Marinos holding a tuna' },
   clothesline: {
     title: 'From the drying room',
@@ -129,7 +135,13 @@ const el = {
   },
   description:
     'Επαγγελματικό πρόγραμμα 7 ημερών για την ωρίμανση των ψαριών από το εστιατόριο Μαραθιά και το Πανεπιστήμιο Δυτικής Αττικής, στην Τήνο. 4 εκπαιδευόμενοι ανά τμήμα. Σύντομα κοντά σας.',
-  nav: { getNotified: 'Ειδοποιήστε με', privacy: 'Πολιτική απορρήτου', language: 'Γλώσσα', switchTo: 'Αλλαγή σε Αγγλικά' },
+  descriptions: {
+    home:
+      'Επαγγελματικό πρόγραμμα 7 ημερών για την ωρίμανση των ψαριών από το εστιατόριο Μαραθιά και το Πανεπιστήμιο Δυτικής Αττικής, στην Τήνο. 4 εκπαιδευόμενοι ανά τμήμα. Σύντομα κοντά σας.',
+    privacy: 'Πώς το The Fish Dry Aging School συλλέγει, χρησιμοποιεί και προστατεύει τα προσωπικά σας δεδομένα όταν ζητάτε ενημέρωση για το πρόγραμμα.',
+    notFound: 'Η σελίδα που αναζητάτε δεν υπάρχει.',
+  },
+  nav: { label: 'Κύρια πλοήγηση', skip: 'Μετάβαση στο περιεχόμενο', getNotified: 'Ειδοποιήστε με', privacy: 'Πολιτική απορρήτου', language: 'Γλώσσα', switchTo: 'Αλλαγή σε Αγγλικά' },
   hero: { eyebrow: 'Άγιος Φωκάς, Τήνος, Ελλάδα. Σύντομα κοντά σας.', chefAlt: 'Ο σεφ και κύριος εκπαιδευτής Μαρίνος κρατά έναν τόνο' },
   clothesline: {
     title: 'Από τον θάλαμο ωρίμανσης',

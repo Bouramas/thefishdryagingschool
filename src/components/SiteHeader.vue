@@ -9,7 +9,7 @@ import LanguageSwitch from './LanguageSwitch.vue'
       <RouterLink :to="localePath('/')" class="display text-lg font-semibold tracking-tight">
         {{ t.siteName }}
       </RouterLink>
-      <div class="flex items-center gap-3">
+      <nav class="flex items-center gap-3" :aria-label="t.nav.label">
         <RouterLink
           :to="{ path: localePath('/'), hash: '#notify' }"
           class="hidden rounded-full border border-white/30 px-5 py-2 text-sm font-medium transition-colors sm:block hover:bg-white/10"
@@ -17,7 +17,7 @@ import LanguageSwitch from './LanguageSwitch.vue'
           {{ t.nav.getNotified }}
         </RouterLink>
         <LanguageSwitch />
-      </div>
+      </nav>
     </div>
   </header>
 </template>

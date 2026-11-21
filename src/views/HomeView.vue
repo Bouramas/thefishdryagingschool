@@ -44,9 +44,9 @@ const logos = [
   </section>
 
   <!-- Program -->
-  <section class="py-6 lg:py-8">
+  <section class="py-6 lg:py-8" aria-labelledby="program-title">
     <div class="mx-auto max-w-7xl px-6 text-center lg:px-10">
-      <h2 class="display mx-auto max-w-3xl text-4xl font-semibold leading-tight sm:text-5xl">
+      <h2 id="program-title" class="display mx-auto max-w-3xl text-4xl font-semibold leading-tight sm:text-5xl">
         {{ t.program.headline(t.program.days, t.program.hours, t.program.participants) }}
       </h2>
       <p class="mx-auto mt-6 max-w-prose text-lg leading-relaxed text-white/75"><LinkedText :text="t.program.summary" /></p>
@@ -64,27 +64,27 @@ const logos = [
   <Clothesline />
 
   <!-- Audience + certification -->
-  <section class="py-12 lg:py-28">
+  <div class="py-12 lg:py-28">
     <div class="mx-auto grid max-w-7xl gap-10 px-6 lg:gap-16 lg:grid-cols-2 lg:px-10">
-      <div>
-        <h2 class="display text-4xl font-semibold sm:text-5xl">{{ t.audienceTitle }}</h2>
+      <section aria-labelledby="audience-title">
+        <h2 id="audience-title" class="display text-4xl font-semibold sm:text-5xl">{{ t.audienceTitle }}</h2>
         <ul class="mt-6 space-y-3 text-lg text-white/85 sm:mt-8 sm:space-y-4">
           <li v-for="a in t.audience" :key="a" class="flex gap-4 border-t border-white/15 pt-3 sm:pt-4">{{ a }}</li>
         </ul>
-      </div>
-      <div>
-        <h2 class="display text-4xl font-semibold sm:text-5xl">{{ t.certificationTitle }}</h2>
+      </section>
+      <section aria-labelledby="certification-title">
+        <h2 id="certification-title" class="display text-4xl font-semibold sm:text-5xl">{{ t.certificationTitle }}</h2>
         <p class="mt-8 max-w-prose text-lg leading-relaxed text-white/85"><LinkedText :text="t.certification" /></p>
         <p class="display mt-8 text-6xl font-semibold" :style="{ color: 'var(--accent)' }">3 ECVET</p>
         <p class="text-white/65"><LinkedText :text="t.certificationCredits" /></p>
-      </div>
+      </section>
     </div>
-  </section>
+  </div>
 
   <!-- Science -->
-  <section class="py-12 lg:py-20">
+  <section class="py-12 lg:py-20" aria-labelledby="science-title">
     <div class="mx-auto max-w-4xl px-6 lg:px-10">
-      <h2 class="display text-4xl font-semibold leading-tight sm:text-5xl">{{ t.science.title }}</h2>
+      <h2 id="science-title" class="display text-4xl font-semibold leading-tight sm:text-5xl">{{ t.science.title }}</h2>
       <p v-for="p in t.science.body" :key="p" class="mt-6 max-w-prose text-xl leading-relaxed text-white/80">{{ p }}</p>
     </div>
   </section>
@@ -93,7 +93,7 @@ const logos = [
   <section class="py-6 lg:py-16" aria-labelledby="book-title">
     <div class="mx-auto max-w-7xl px-6 lg:px-10">
       <div class="grid items-center gap-8 sm:rounded-3xl sm:bg-(--bg-raised) sm:p-14 lg:grid-cols-2 lg:gap-16">
-        <div class="flex justify-center">
+        <figure class="flex justify-center">
           <img
             :src="t.book.cover"
             :alt="t.book.title"
@@ -102,8 +102,8 @@ const logos = [
             loading="lazy"
             class="h-auto w-full max-w-xs rounded-lg shadow-2xl"
           />
-        </div>
-        <div>
+        </figure>
+        <article aria-labelledby="book-title">
           <p class="mb-3 text-base font-medium" :style="{ color: 'var(--accent)' }">{{ t.book.label }} · {{ t.book.kicker }}</p>
           <h2 id="book-title" class="display mb-6 text-3xl font-semibold leading-snug sm:text-4xl">{{ t.book.title }}</h2>
           <p v-for="p in t.book.body" :key="p" class="mb-4 max-w-prose text-lg leading-relaxed text-white/80">{{ p }}</p>
@@ -116,7 +116,7 @@ const logos = [
           >
             {{ t.book.buy }}
           </a>
-        </div>
+        </article>
       </div>
     </div>
   </section>
@@ -141,10 +141,10 @@ const logos = [
   </section>
 
   <!-- Notify -->
-  <section id="notify" class="scroll-mt-24 py-24 lg:py-32">
+  <section id="notify" class="scroll-mt-24 py-24 lg:py-32" aria-labelledby="notify-title">
     <div class="mx-auto max-w-7xl px-6 lg:px-10">
       <div class="rounded-3xl p-8 sm:p-14" :style="{ background: 'var(--bg-raised)' }">
-        <h2 class="display max-w-2xl text-4xl font-semibold leading-tight sm:text-5xl">
+        <h2 id="notify-title" class="display max-w-2xl text-4xl font-semibold leading-tight sm:text-5xl">
           {{ t.notify.title }}
         </h2>
         <p class="mt-5 mb-10 max-w-prose text-lg text-white/75">

@@ -42,13 +42,13 @@ const social = [
     </div>
     <div class="mx-auto flex max-w-7xl flex-col items-center gap-3 px-6 py-8 text-center text-sm text-white/60 lg:flex-row lg:text-left lg:items-center lg:justify-between lg:px-10">
       <p><LinkedText :text="t.footer.text" /></p>
-      <nav class="flex items-center gap-6">
+      <nav class="flex items-center gap-6" :aria-label="t.nav.label">
         <RouterLink :to="localePath('/privacy')" class="hover:text-white">{{ t.nav.privacy }}</RouterLink>
         <LanguageSwitch />
       </nav>
     </div>
     <div class="mx-auto max-w-7xl px-6 pb-8 text-center text-xs text-white/60 lg:px-10">
-      <p>thefishdryagingschool.com | © All rights reserved</p>
+      <p><small>thefishdryagingschool.com | © All rights reserved</small></p>
     </div>
   </footer>
 </template>

@@ -22,14 +22,15 @@ const photos = [
     </div>
     <div class="line-wrap mx-auto max-w-7xl" :class="{ 'is-end': atEnd }">
     <div class="line-scroll sm:px-6 lg:px-10" @scroll.passive="onScroll">
-      <ul class="line-row">
+      <div class="line-row">
         <svg class="line-cable" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true">
           <path d="M0 0 Q50 40 100 0" class="cable-shadow" />
           <path d="M0 0 Q50 40 100 0" class="cable" />
         </svg>
+        <ul class="line-items">
         <li v-for="(p, i) in photos" :key="p.src" class="hang" :class="{ mid: i === 1 }" :style="{ '--tilt': p.tilt }">
           <span class="pin" aria-hidden="true" />
-          <div class="photo-print photo-print--small">
+          <figure class="photo-print photo-print--small">
             <img
               :src="p.src"
               :alt="t.clothesline.alts[i]"
@@ -38,9 +39,10 @@ const photos = [
               loading="lazy"
               class="block aspect-[4/5] h-auto w-full object-cover"
             />
-          </div>
+          </figure>
         </li>
-      </ul>
+        </ul>
+      </div>
     </div>
     <span class="line-hint" aria-hidden="true">
       <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6" /></svg>
