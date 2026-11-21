@@ -1,6 +1,7 @@
 import { ViteSSG } from 'vite-ssg'
 import '@fontsource-variable/fraunces'
 import '@fontsource-variable/figtree'
+import '@fontsource-variable/source-sans-3'
 import '@fontsource-variable/noto-serif'
 import '@fontsource-variable/inter'
 import './style.css'

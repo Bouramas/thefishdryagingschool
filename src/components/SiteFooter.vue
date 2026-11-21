@@ -12,9 +12,9 @@ const social = [
 </script>
 
 <template>
-  <footer class="border-t border-white/10">
+  <footer class="border-t border-white/10" :style="{ background: 'var(--bg-footer)' }">
     <div class="mx-auto flex max-w-7xl flex-col items-center gap-4 px-6 pt-10 sm:flex-row sm:items-center sm:gap-6 lg:px-10">
-      <p class="text-xs uppercase tracking-[0.2em] text-white/60">{{ t.footer.social.caption }}</p>
+      <p class="text-xs uppercase tracking-[0.2em] text-white/85">{{ t.footer.social.caption }}</p>
       <ul class="flex items-center justify-center gap-3">
         <li v-for="s in social" :key="s.key">
           <a
@@ -23,7 +23,7 @@ const social = [
             rel="noopener noreferrer"
             :aria-label="t.footer.social[s.key]"
             :title="t.footer.social[s.key]"
-            class="flex h-11 w-11 items-center justify-center rounded-full border border-white/20 text-white/80 transition-colors hover:border-white hover:text-white"
+            class="flex h-11 w-11 items-center justify-center rounded-full border border-white/20 text-white/80 transition-all duration-200 hover:-translate-y-0.5 hover:border-white hover:bg-white hover:text-(--color-brand)"
           >
             <svg v-if="s.key === 'facebook'" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5" aria-hidden="true">
               <path d="M13.5 22v-8.2h2.8l.4-3.3h-3.2V8.4c0-.9.3-1.6 1.6-1.6h1.7V3.9c-.3 0-1.3-.1-2.4-.1-2.4 0-4.1 1.5-4.1 4.2v2.5H7.5v3.3h2.8V22h3.2z" />
@@ -40,14 +40,14 @@ const social = [
         </li>
       </ul>
     </div>
-    <div class="mx-auto flex max-w-7xl flex-col items-center gap-3 px-6 py-8 text-center text-sm text-white/60 lg:flex-row lg:text-left lg:items-center lg:justify-between lg:px-10">
+    <div class="mx-auto flex max-w-7xl flex-col items-center gap-3 px-6 py-8 text-center text-sm text-white/85 lg:flex-row lg:text-left lg:items-center lg:justify-between lg:px-10">
       <p><LinkedText :text="t.footer.text" /></p>
       <nav class="flex items-center gap-6" :aria-label="t.nav.label">
         <RouterLink :to="localePath('/privacy')" class="hover:text-white">{{ t.nav.privacy }}</RouterLink>
         <LanguageSwitch />
       </nav>
     </div>
-    <div class="mx-auto max-w-7xl px-6 pb-8 text-center text-xs text-white/60 lg:px-10">
+    <div class="mx-auto max-w-7xl px-6 pb-8 text-center text-xs text-white/85 lg:px-10">
       <p><small>thefishdryagingschool.com | © All rights reserved</small></p>
     </div>
   </footer>

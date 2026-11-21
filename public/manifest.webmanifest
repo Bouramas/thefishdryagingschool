@@ -1,0 +1,11 @@
+{
+  "name": "The Fish Dry Aging School",
+  "short_name": "Fish Dry Aging",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "theme_color": "#AF4245",
+  "background_color": "#AF4245",
+  "display": "browser"
+}

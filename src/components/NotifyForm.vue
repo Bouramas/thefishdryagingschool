@@ -56,7 +56,7 @@ async function submit() {
 <template>
   <div v-if="status === 'success'" role="status" class="rounded-2xl border border-white/20 bg-white/5 p-5">
     <p class="display text-xl">{{ t.form.successTitle }}</p>
-    <p class="mt-1 text-white/70">{{ t.form.successBody }}</p>
+    <p class="mt-1 text-white/85">{{ t.form.successBody }}</p>
   </div>
 
   <form v-else novalidate @submit.prevent="submit" :class="compact ? 'max-w-md' : 'max-w-xl'">
@@ -71,25 +71,24 @@ async function submit() {
         :placeholder="t.form.placeholder"
         :aria-invalid="status === 'error'"
         :aria-describedby="`${id}-msg`"
-        class="min-w-0 flex-1 rounded-full border border-white/25 bg-white/5 px-5 py-3 text-base text-white placeholder:text-white/40 focus:border-transparent"
+        class="min-w-0 flex-1 rounded-full border border-white/25 bg-white/5 px-5 py-3 text-base text-white placeholder:text-white/70 focus:border-transparent"
       />
       <button
         type="submit"
         :disabled="status === 'loading'"
-        class="rounded-full px-6 py-3 font-semibold text-ink transition-opacity hover:opacity-90 disabled:opacity-60"
-        :style="{ background: 'var(--accent)' }"
+        class="btn-accent rounded-full px-6 py-3 font-semibold disabled:opacity-60"
       >
         {{ status === 'loading' ? t.form.saving : t.form.submit }}
       </button>
     </div>
     <input v-model="website" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" class="absolute -left-[9999px] h-0 w-0 opacity-0" />
-    <label class="mt-3 flex items-start gap-3 text-sm text-white/65">
+    <label class="mt-3 flex items-start gap-3 text-sm text-white/85">
       <input v-model="consent" type="checkbox" class="mt-0.5 size-4 shrink-0 accent-amber" />
       <span>
         {{ t.form.consentBefore }}
         <RouterLink to="/privacy" class="underline underline-offset-2 hover:text-white">{{ t.form.privacyLink }}</RouterLink>.
       </span>
     </label>
-    <p :id="`${id}-msg`" role="alert" class="mt-3 min-h-5 text-sm text-red-300">{{ status === 'error' ? t.form[message] : '' }}</p>
+    <p :id="`${id}-msg`" role="alert" class="mt-3 min-h-5 text-sm text-amber-200">{{ status === 'error' ? t.form[message] : '' }}</p>
   </form>
 </template>

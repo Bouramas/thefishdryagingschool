@@ -1,5 +1,4 @@
 <script setup>
-import { onMounted, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { useHead } from '@unhead/vue'
 import { t, locale, pathFor } from './i18n'
@@ -85,26 +84,6 @@ useHead(() => {
     link: links,
     script: schema,
   }
-})
-
-let frame = 0
-function updateAge() {
-  frame = 0
-  const max = document.documentElement.scrollHeight - window.innerHeight
-  const age = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0
-  document.documentElement.style.setProperty('--age', age.toFixed(3))
-}
-function onScroll() {
-  if (!frame) frame = requestAnimationFrame(updateAge)
-}
-onMounted(() => {
-  updateAge()
-  window.addEventListener('scroll', onScroll, { passive: true })
-  window.addEventListener('resize', onScroll)
-})
-onUnmounted(() => {
-  window.removeEventListener('scroll', onScroll)
-  window.removeEventListener('resize', onScroll)
 })
 </script>
 

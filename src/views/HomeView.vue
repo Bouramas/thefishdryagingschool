@@ -14,22 +14,31 @@ const logos = [
 
 <template>
   <!-- Hero -->
-  <section class="relative overflow-hidden pt-22 pb-10 lg:pt-40 lg:pb-14">
+  <section class="relative isolate overflow-hidden pt-22 pb-20 lg:pt-40 lg:pb-28">
+    <div
+      class="symbol-bg -right-1/6 -z-10 bottom-0 h-[70vh] w-[70vh] translate-y-[17.5%] opacity-[0.07] sm:h-[90vh] sm:w-[90vh]"
+      :style="{ color: 'var(--accent)' }"
+      aria-hidden="true"
+    ></div>
     <div class="mx-auto flex max-w-7xl flex-col px-6 lg:grid lg:grid-cols-12 lg:items-center lg:gap-12 lg:px-10">
       <div class="contents lg:block lg:col-span-6">
         <p class="hero-line mb-5 text-base font-medium" :style="{ color: 'var(--accent)' }">
           {{ t.hero.eyebrow }}
         </p>
-        <h1 class="hero-line display text-6xl font-semibold leading-[0.95] sm:text-7xl xl:text-8xl">
-          {{ t.siteName }}
-        </h1>
+        <div class="hero-line flex text-5xl leading-[1.02] sm:text-7xl lg:text-6xl xl:text-7xl">
+          <h1 class="logo-font w-fit text-right">
+            <span class="block">The Fish</span>
+            <span class="block">Dry-Aging</span>
+            <span class="block">School</span>
+          </h1>
+        </div>
         <p class="hero-line mt-8 max-w-prose text-lg leading-relaxed text-white/80"><LinkedText :text="t.intro" /></p>
         <div class="hero-line order-2 mt-10 lg:order-none">
           <NotifyForm compact />
         </div>
       </div>
       <figure class="hero-fish order-1 mt-10 lg:order-none lg:mt-0 lg:col-span-6">
-        <div class="photo-print mx-auto w-full max-w-sm sm:max-w-md lg:ml-auto lg:mr-6 lg:max-w-lg">
+        <div class="photo-print mx-auto w-full max-w-[19.2rem] sm:max-w-[22.4rem] lg:ml-auto lg:mr-6 lg:max-w-[25.6rem]">
           <img
             src="/images/chef_tuna_1200.jpeg"
             :alt="t.hero.chefAlt"
@@ -49,12 +58,13 @@ const logos = [
       <h2 id="program-title" class="display mx-auto max-w-3xl text-4xl font-semibold leading-tight sm:text-5xl">
         {{ t.program.headline(t.program.days, t.program.hours, t.program.participants) }}
       </h2>
-      <p class="mx-auto mt-6 max-w-prose text-lg leading-relaxed text-white/75"><LinkedText :text="t.program.summary" /></p>
+      <p class="mx-auto mt-6 max-w-prose text-lg leading-relaxed text-white/85"><LinkedText :text="t.program.summary" /></p>
     </div>
   </section>
 
   <!-- Modules -->
-  <section class="pt-6 pb-12 lg:pt-8 lg:pb-20" aria-labelledby="modules-title">
+  <section class="relative isolate overflow-hidden pt-6 pb-12 lg:pt-8 lg:pb-20" aria-labelledby="modules-title">
+    <div class="symbol-bg -z-10 top-1/2 left-1/2 h-[34rem] w-[34rem] -translate-x-1/2 -translate-y-1/2 opacity-[0.06] lg:h-[46rem] lg:w-[46rem]" :style="{ color: 'var(--accent)' }" aria-hidden="true"></div>
     <div class="mx-auto max-w-7xl px-6 lg:px-10">
       <h2 id="modules-title" class="display mb-10 text-4xl font-semibold sm:text-5xl">{{ t.modulesTitle }}</h2>
       <ModuleList :modules="t.modules" />
@@ -64,7 +74,8 @@ const logos = [
   <Clothesline />
 
   <!-- Audience + certification -->
-  <div class="py-12 lg:py-28">
+  <div class="relative isolate overflow-hidden py-12 lg:py-28">
+    <div class="symbol-bg -z-10 top-1/2 -left-32 h-[32rem] w-[32rem] -translate-y-1/2 -rotate-12 opacity-[0.06] lg:-left-16 lg:h-[42rem] lg:w-[42rem]" :style="{ color: 'var(--accent)' }" aria-hidden="true"></div>
     <div class="mx-auto grid max-w-7xl gap-10 px-6 lg:gap-16 lg:grid-cols-2 lg:px-10">
       <section aria-labelledby="audience-title">
         <h2 id="audience-title" class="display text-4xl font-semibold sm:text-5xl">{{ t.audienceTitle }}</h2>
@@ -76,7 +87,7 @@ const logos = [
         <h2 id="certification-title" class="display text-4xl font-semibold sm:text-5xl">{{ t.certificationTitle }}</h2>
         <p class="mt-8 max-w-prose text-lg leading-relaxed text-white/85"><LinkedText :text="t.certification" /></p>
         <p class="display mt-8 text-6xl font-semibold" :style="{ color: 'var(--accent)' }">3 ECVET</p>
-        <p class="text-white/65"><LinkedText :text="t.certificationCredits" /></p>
+        <p class="text-white/85"><LinkedText :text="t.certificationCredits" /></p>
       </section>
     </div>
   </div>
@@ -111,8 +122,7 @@ const logos = [
             :href="t.book.buyUrl"
             target="_blank"
             rel="noopener noreferrer"
-            class="mt-4 inline-block rounded-full px-6 py-3 font-semibold text-ink transition-opacity hover:opacity-90"
-            :style="{ background: 'var(--accent)' }"
+            class="btn-accent mt-4 inline-block rounded-full px-6 py-3 font-semibold"
           >
             {{ t.book.buy }}
           </a>
@@ -143,11 +153,16 @@ const logos = [
   <!-- Notify -->
   <section id="notify" class="scroll-mt-24 py-24 lg:py-32" aria-labelledby="notify-title">
     <div class="mx-auto max-w-7xl px-6 lg:px-10">
-      <div class="rounded-3xl p-8 sm:p-14" :style="{ background: 'var(--bg-raised)' }">
+      <div class="relative isolate overflow-hidden rounded-3xl p-8 sm:p-14" :style="{ background: 'var(--bg-raised)' }">
+        <div
+          class="symbol-bg -z-10 -right-16 -bottom-20 h-80 w-80 opacity-[0.05]"
+          :style="{ color: 'var(--accent)' }"
+          aria-hidden="true"
+        ></div>
         <h2 id="notify-title" class="display max-w-2xl text-4xl font-semibold leading-tight sm:text-5xl">
           {{ t.notify.title }}
         </h2>
-        <p class="mt-5 mb-10 max-w-prose text-lg text-white/75">
+        <p class="mt-5 mb-10 max-w-prose text-lg text-white/85">
           {{ t.notify.body(t.program.participants) }}
         </p>
         <NotifyForm />
