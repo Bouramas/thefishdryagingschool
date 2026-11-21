@@ -14,9 +14,9 @@ const logos = [
 
 <template>
   <!-- Hero -->
-  <section class="relative isolate overflow-hidden pt-22 pb-20 lg:pt-40 lg:pb-28">
+  <section class="relative isolate overflow-hidden pt-28 pb-20 lg:pt-40 lg:pb-28">
     <div
-      class="symbol-bg -right-1/6 -z-10 bottom-0 h-[70vh] w-[70vh] translate-y-[17.5%] opacity-[0.07] sm:h-[90vh] sm:w-[90vh]"
+      class="symbol-bg -right-24 top-24 -z-10 h-[26rem] w-[26rem] opacity-[0.09] sm:top-auto sm:bottom-0 sm:-right-1/6 sm:h-[90vh] sm:w-[90vh] sm:translate-y-[17.5%] sm:opacity-[0.07]"
       :style="{ color: 'var(--accent)' }"
       aria-hidden="true"
     ></div>
