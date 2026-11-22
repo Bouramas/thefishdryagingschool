@@ -1,6 +1,6 @@
 # AGENTS.md
 
-Pre-launch site for The Fish Dry Aging School (Marathia restaurant and the University of West Attica, Agios Fokas, Tinos, Greece). It presents the program and collects emails for a launch notification.
+Pre-launch site for The Fish Dry Aging School (Marathia restaurant and the University of West Attica, Agios Fokas, Tinos, Greece). It presents the program and collects name, email and phone for the class waitlist.
 
 ## Stack
 - Vue 3 (`<script setup>`), Vite, vue-router 5, Tailwind CSS v4 (`@tailwindcss/vite`)
@@ -36,9 +36,9 @@ Pre-launch site for The Fish Dry Aging School (Marathia restaurant and the Unive
 - Modules are numbered because the source numbers them. Do not add numbering to non-sequential content.
 
 ## Notify form
-- `NotifyForm.vue` validates the email, requires consent, includes a honeypot field, and POSTs form-encoded `email` and `userGroup` (locale) to the Loops.so form endpoint in `VITE_LOOPS_FORM_URL`.
+- `NotifyForm.vue` validates full name, email and phone, requires consent, includes a honeypot field, and POSTs form-encoded `email`, `firstName`, `lastName` (full name split at the first space), `phone` and `userGroup` (locale) to the Loops.so form endpoint in `VITE_LOOPS_FORM_URL`.
 - No backend exists. When `VITE_LOOPS_FORM_URL` is unset the form shows a "not connected" error, so no signup is lost silently.
-- Collected data is limited to the email address. If the data collected changes, update `PrivacyView.vue`.
+- Collected data is limited to name, email and phone. Verify in Loops that `firstName`, `lastName` and `phone` are saved from the form endpoint. If the data collected changes, update `PrivacyView.vue`.
 
 ## Environment variables
 See `.env.example`.

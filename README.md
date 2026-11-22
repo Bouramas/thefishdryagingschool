@@ -1,6 +1,6 @@
 # The Fish Dry Aging School
 
-Pre-launch website for The Fish Dry Aging School, a program by the Marathia restaurant and the University of West Attica (Agios Fokas, Tinos, Greece). The site presents the program and collects email addresses for a launch notification.
+Pre-launch website for The Fish Dry Aging School, a program by the Marathia restaurant and the University of West Attica (Agios Fokas, Tinos, Greece). The site presents the program and collects name, email and phone for the class waitlist.
 
 ## Stack
 
@@ -33,7 +33,7 @@ See `.env.example`.
 | Variable | Description |
 | --- | --- |
 | `VITE_SITE_URL` | Public site URL, used for the sitemap, canonical and hreflang links |
-| `VITE_LOOPS_FORM_URL` | Loops.so form endpoint: `https://app.loops.so/api/newsletter-form/<FORM_ID>` (form-encoded `email`, `userGroup`) |
+| `VITE_LOOPS_FORM_URL` | Loops.so form endpoint: `https://app.loops.so/api/newsletter-form/<FORM_ID>` (form-encoded `email`, `firstName`, `lastName`, `phone`, `userGroup`) |
 
 If `VITE_LOOPS_FORM_URL` is unset, the notify form shows a "not connected" error.
 
