@@ -1,6 +1,6 @@
 <script setup>
 import { ref, useId } from 'vue'
-import { t, locale } from '../i18n'
+import { t, locale, localePath } from '../i18n'
 
 defineProps({ compact: Boolean })
 
@@ -120,7 +120,7 @@ const inputClass =
       <input v-model="consent" type="checkbox" class="mt-0.5 size-4 shrink-0 accent-amber" />
       <span>
         {{ t.form.consentBefore }}
-        <RouterLink to="/privacy" class="underline underline-offset-2 hover:text-white">{{ t.form.privacyLink }}</RouterLink>.
+        <RouterLink :to="localePath('/privacy')"class="underline underline-offset-2 hover:text-white">{{ t.form.privacyLink }}</RouterLink>.
       </span>
     </label>
     <p :id="`${id}-msg`" role="alert" class="mt-3 min-h-5 text-sm text-amber-200">{{ status === 'error' ? t.form[message] : '' }}</p>
